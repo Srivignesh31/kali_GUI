@@ -1,0 +1,50 @@
+//Create a docker network. //pt is the network name and it's a variable 
+
+docker network create pt --attachable --subnet 10.0.0.0/24
+
+
+docker run -it --network pt --ip="10.0.0.2" --name metasploitable --hostname metasploitable2 tleemcjr/metasploitable2 bash 
+
+//Once container is up run 
+
+services.sh
+
+//Donot close the container 
+
+
+//Open new terminal 
+
+//command to run KALI linux with GUI 
+//command will spin up a docker container with all the prereq package and setup required for GUI
+//25900 and 25901 are exposed port which can be accessed! You can change this to any open port in your mac
+
+
+docker run --network pt --ip="10.0.0.3" -p 25900:5900 -p 25901:5901 --name kali  -it srivignesh/kali_gui:v2 /bin/bash
+
+
+//Once the container is up run this command to bring up GUI
+export USER=root
+tightvncserver :0 -geometry 1280x800 -depth 16 -pixelformat rgb565
+
+
+//Once the command is successful; Open screen sharing and give correct details 
+
+Connect to: 127.0.0.1:25900
+
+pwd: csm123
+
+
+
+
+
+Note: Contains can also be run in detached mode by added -d along with -it
+
+docker run --network pt --ip="10.0.0.3" -p 25900:5900 -p 25901:5901 -itd --name kali srivignesh/kali_gui:v2 /bin/bash 
+
+In that case you can access by,
+
+docker exec -it kali bash
+
+
+
+Note: if container is stopped all the data will be lost; If needed you can mount all the data to a volume in your local machine

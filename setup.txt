@@ -54,3 +54,12 @@ docker exec -it kali bash
 
 
 Note: if container is stopped all the data will be lost; If needed you can mount all the data to a volume in your local machine
+
+//Add volumes to avoid deletion of data inside the kali vm 
+//create path in local which will be assigned to src.     // mkdir /User/kali/kali-root
+
+--mount src=/User/kali/kali-root,dst=/root --mount src=/User/kali/kali-postgres,dst=/var/lib/postgresql
+
+
+docker run --network pt --ip="10.0.0.3" -p 25900:5900 -p 25901:5901 -itd --mount src=/User/kali/kali-root,dst=/root --mount src=/User/kali/kali-postgres,dst=/var/lib/postgresql --name kali srivignesh/kali_gui:v2 /bin/bash 
+

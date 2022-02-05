@@ -1,7 +1,13 @@
-//Create a docker network. //pt is the network name and it's a variable 
+// Docker download link for MAC
+// https://docs.docker.com/desktop/mac/install/
+
+
+
+//Create a docker network. //pt is the network name; it can be anything // subnet range 
 
 docker network create pt --attachable --subnet 10.0.0.0/24
 
+//metasploitable 
 
 docker run -it --network pt --ip="10.0.0.2" --name metasploitable --hostname metasploitable2 tleemcjr/metasploitable2 bash 
 

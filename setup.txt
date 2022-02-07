@@ -58,8 +58,13 @@ Note: if container is stopped all the data will be lost; If needed you can mount
 //Add volumes to avoid deletion of data inside the kali vm 
 //create path in local which will be assigned to src.     // mkdir /User/kali/kali-root
 
---mount src=/User/kali/kali-root,dst=/root --mount src=/User/kali/kali-postgres,dst=/var/lib/postgresql
+
+//name needs to be changed to your username 
+docker run --network pt --ip="10.0.0.3" -p 25900:5900 -p 25901:5901 -itd -v /Users/name/kali/kali-root:/root -v /Users/name/kali/kali-postgres:/var/lib/postgresql --name kali srivignesh/kali_gui:v2 /bin/bash
 
 
-docker run --network pt --ip="10.0.0.3" -p 25900:5900 -p 25901:5901 -itd --mount src=/User/kali/kali-root,dst=/root --mount src=/User/kali/kali-postgres,dst=/var/lib/postgresql --name kali srivignesh/kali_gui:v2 /bin/bash 
+//here the container is running in detached mode 
+// you have to go inside the container (-d)
+
+// docker exec -it kali bash
 

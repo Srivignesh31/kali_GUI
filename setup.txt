@@ -68,3 +68,13 @@ docker run --network pt --ip="10.0.0.3" -p 25900:5900 -p 25901:5901 -itd -v /Use
 
 // docker exec -it kali bash
 
+// if you want to install a tool! Go inside the container 
+
+apt install cherrytree
+
+if you want to save this you have to create a new docker image 
+
+// do docker ps to get the container id
+//increase the version v3 v4 based on your commit 
+
+docker commit containerID srivignesh/kali-gui:v3

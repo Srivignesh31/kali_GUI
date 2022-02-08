@@ -1,0 +1,14 @@
+//if you running docker on kali 
+
+//follow below steps
+
+
+// amd on arm 
+# Install the qemu packages
+sudo apt-get install qemu binfmt-support qemu-user-static 
+# This step will execute the registering scripts
+sudo docker run --rm --privileged multiarch/qemu-user-static --reset -p yes 
+# Testing the emulation environment
+sudo docker run --rm -t arm64v8/ubuntu uname -m 
+
+sudo docker run -it  --name meta tleemcjr/metasploitable2 bash 

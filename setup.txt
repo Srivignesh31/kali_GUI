@@ -93,4 +93,4 @@ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 # Testing the emulation environment
 docker run --rm -t arm64v8/ubuntu uname -m 
 
-docker run -it  --name metasploitable metasploitable2 tleemcjr/metasploitable2 bash 
+docker run -it  --name meta tleemcjr/metasploitable2 bash 

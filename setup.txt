@@ -33,6 +33,7 @@ export USER=root
 tightvncserver :0 -geometry 1280x800 -depth 16 -pixelformat rgb565
 
 
+
 //Once the command is successful; Open screen sharing and give correct details 
 
 Connect to: 127.0.0.1:25900
@@ -91,3 +92,5 @@ sudo apt-get install qemu binfmt-support qemu-user-static
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes 
 # Testing the emulation environment
 docker run --rm -t arm64v8/ubuntu uname -m 
+
+docker run -it  --name metasploitable metasploitable2 tleemcjr/metasploitable2 bash 

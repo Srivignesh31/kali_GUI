@@ -99,4 +99,4 @@ sudo docker run --rm -t arm64v8/ubuntu uname -m
 
 
 
-sudo docker run --ip="10.0.0.2" --name meta -it tleemcjr/metasploitable2:latest sh -c "/bin/services.sh && bash"
+sudo docker run --name meta -it tleemcjr/metasploitable2:latest sh -c "/bin/services.sh && bash"

@@ -78,3 +78,16 @@ if you want to save this you have to create a new docker image
 //increase the version v3 v4 based on your commit 
 
 docker commit containerID srivignesh/kali-gui:v3
+
+
+
+
+
+
+// amd on arm 
+# Install the qemu packages
+sudo apt-get install qemu binfmt-support qemu-user-static 
+# This step will execute the registering scripts
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes 
+# Testing the emulation environment
+docker run --rm -t arm64v8/ubuntu uname -m 
